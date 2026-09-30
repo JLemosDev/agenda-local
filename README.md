@@ -2,9 +2,11 @@
 
 Uma agenda para pequenos negócios, com profissionais, serviços e reservas persistidas. A demonstração usa o **Estúdio Horizonte**, um negócio fictício, e separa os dados de cada visitante.
 
+**[Abrir a demonstração online](https://agenda-local-jlemosdev.vlogsegames26.chatgpt.site)**
+
 > Projeto de portfólio desenvolvido com assistência de IA. Serve para demonstrar implementação, organização e regras de negócio; não representa um serviço comercial contratado.
 
-![Tela da Agenda Local](docs/agenda-local.png)
+![Tela da Agenda Local](docs/agenda-local.jpg)
 
 ## O que você pode experimentar
 
@@ -56,13 +58,13 @@ Os testes de domínio cobrem datas inválidas, fuso horário, domingo, horário 
 
 ## Estrutura
 
-| Pasta | Responsabilidade |
-|---|---|
-| app | Interface e rotas HTTP |
-| lib | Regras e operações no banco |
-| db | Esquema de dados |
-| drizzle | Migrações versionadas |
-| tests | Testes do domínio |
+| Pasta   | Responsabilidade                       |
+| ------- | -------------------------------------- |
+| app     | Interface e rotas HTTP                 |
+| lib     | Regras e operações no banco            |
+| db      | Esquema de dados                       |
+| drizzle | Migrações versionadas                  |
+| tests   | Testes do domínio                      |
 | scripts | Execução do framework e ambiente local |
 
 ## Limites e próximos passos
@@ -76,4 +78,3 @@ Os espaços de demonstração não têm limpeza automática nesta versão. O lim
 ## Contato
 
 [JLemosDev no GitHub](https://github.com/JLemosDev) · lemosjoaovitorlemos@gmail.com
-
