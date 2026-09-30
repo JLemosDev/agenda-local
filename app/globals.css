@@ -1,0 +1,710 @@
+@import "tailwindcss";
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  color: #16233b;
+  background: #f3f6fb;
+  --navy: #122849;
+  --blue: #245bea;
+  --muted: #65758c;
+  --line: #dde5ef;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  outline-offset: 4px;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  width: 238px;
+  background: var(--navy);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  flex-shrink: 0;
+}
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.9px;
+}
+.brand svg {
+  color: #75bcff;
+}
+.brand-light {
+  font-weight: 400;
+}
+.business {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 25px 0 28px;
+  border-bottom: 1px solid #ffffff20;
+  margin-bottom: 24px;
+}
+.avatar {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: #ffffff14;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.business strong {
+  display: block;
+  font-size: 14px;
+}
+.business span {
+  display: block;
+  color: #aabbd3;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px;
+  border-radius: 9px;
+  color: #bfcde2;
+  font-size: 14px;
+  font-weight: 600;
+}
+.sidebar nav .nav-active,
+.sidebar nav a:hover {
+  background: #2b4a75;
+  color: white;
+}
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 45px;
+  color: #b8c8dd;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.sidebar-bottom a {
+  color: #8dc9ff;
+}
+.demo-label {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.app-shell > main {
+  flex: 1;
+  min-width: 0;
+}
+.topbar {
+  height: 74px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 42px;
+  background: white;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+.demo-pill {
+  padding: 7px 11px;
+  background: #eef3fc;
+  color: #47618a;
+  border-radius: 6px;
+  letter-spacing: 0;
+  font-size: 12px;
+}
+.workspace {
+  max-width: 1450px;
+  margin: auto;
+  padding: 34px 42px;
+}
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.eyebrow {
+  color: var(--blue);
+  font-size: 12px;
+  letter-spacing: 1.7px;
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  letter-spacing: -1.1px;
+}
+h2 {
+  font-size: 19px;
+  letter-spacing: -0.4px;
+  margin: 0;
+}
+h3 {
+  font-size: 16px;
+  margin: 0;
+}
+p {
+  margin: 6px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.muted {
+  color: var(--muted);
+}
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--blue);
+  color: white;
+  padding: 13px 17px;
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 44px;
+}
+.primary:hover {
+  background: #1d48bc;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+.metrics > div {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+}
+.metrics span {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+.metrics span svg {
+  color: var(--blue);
+}
+.metrics strong {
+  display: block;
+  font-size: 30px;
+  margin: 12px 0 4px;
+  letter-spacing: -1px;
+}
+.metrics small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.85fr);
+  align-items: start;
+  gap: 24px;
+}
+.panel {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.panel-heading p.muted {
+  font-size: 14px;
+  margin-top: 6px;
+}
+.date-control {
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.date-control input {
+  font-size: 14px;
+  min-height: 39px;
+  max-width: 155px;
+}
+.agenda-list {
+  padding: 0 24px;
+}
+.appointment {
+  display: flex;
+  padding: 25px 0;
+  border-bottom: 1px solid #edf1f6;
+  gap: 21px;
+}
+.time {
+  min-width: 52px;
+  padding-top: 2px;
+}
+.time strong {
+  font-size: 16px;
+  display: block;
+}
+.time span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.appointment-body {
+  flex: 1;
+  border-left: 3px solid #4b80f7;
+  padding-left: 18px;
+  min-width: 0;
+}
+.appointment-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.status {
+  font-size: 12px;
+  color: #157348;
+  background: #eaf8f0;
+  padding: 5px 9px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.status.cancelled {
+  color: #836b66;
+  background: #f4efed;
+}
+.status.completed {
+  color: #2854aa;
+  background: #edf3ff;
+}
+.appointment-body p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.appointment-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 12px;
+}
+.appointment-footer > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.quiet-note {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  background: #fafcff;
+}
+.booking-panel .panel-heading svg {
+  color: var(--blue);
+}
+.booking-panel form {
+  padding: 23px;
+}
+.booking-panel label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 17px;
+}
+input,
+select,
+textarea {
+  background: white;
+  border: 1px solid #ccd7e5;
+  border-radius: 7px;
+  padding: 10px 12px;
+  min-height: 43px;
+  color: #253c5c;
+  width: 100%;
+  font-size: 14px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--blue);
+}
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 20px;
+}
+legend {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.slots button {
+  border: 1px solid #d5dfed;
+  border-radius: 6px;
+  padding: 9px 5px;
+  color: #425c80;
+  background: white;
+  font-size: 14px;
+}
+.slots button:hover,
+.slots button.selected {
+  color: var(--blue);
+  border-color: var(--blue);
+  background: #edf3ff;
+}
+.booking-summary {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.booking-summary strong {
+  font-size: 20px;
+}
+.submit {
+  width: 100%;
+}
+.form-note {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 13px;
+}
+.service-strip {
+  margin-top: 30px;
+}
+.service-strip > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 14px;
+}
+.service-strip article {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.service-strip svg {
+  color: var(--blue);
+}
+.service-strip h3 {
+  font-size: 14px;
+}
+.service-strip span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.footer {
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.empty {
+  padding: 50px 22px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+}
+.error {
+  color: #9d2437;
+  background: #fff0f1;
+  padding: 12px;
+  border-radius: 7px;
+  font-size: 14px;
+  margin: 10px 0;
+}
+.notice {
+  padding: 12px 16px;
+  background: #edf7f1;
+  color: #166541;
+  border: 1px solid #bce1cc;
+  border-radius: 8px;
+  margin: 0 0 20px;
+  font-size: 14px;
+}
+.appointment-actions {
+  display: flex;
+  gap: 8px;
+}
+.text-button {
+  background: none;
+  border: 0;
+  padding: 5px;
+  color: #315eab;
+  font-size: 12px;
+  text-decoration: underline;
+}
+.text-button.danger {
+  color: #a03949;
+}
+.filter-control {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+}
+.filter-control select {
+  max-width: 220px;
+}
+.booking-panel .eyebrow {
+  margin-bottom: 5px;
+}
+.date-nav {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.date-nav button {
+  padding: 8px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: flex;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 200px;
+    padding: 28px 17px;
+  }
+  .workspace {
+    padding: 28px 24px;
+  }
+  .topbar {
+    padding: 0 24px;
+  }
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .booking-panel form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+  .booking-panel fieldset,
+  .booking-summary,
+  .submit,
+  .form-note,
+  .booking-panel form > .error {
+    grid-column: 1/-1;
+  }
+  .slots {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .service-strip > div {
+    grid-template-columns: 1fr;
+  }
+  .metrics > div {
+    padding: 18px;
+  }
+  .page-heading {
+    align-items: flex-start;
+  }
+  h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 650px) {
+  .app-shell {
+    display: block;
+  }
+  .sidebar {
+    width: 100%;
+    padding: 17px 20px;
+  }
+  .brand {
+    font-size: 23px;
+  }
+  .business,
+  .sidebar-bottom {
+    display: none;
+  }
+  .sidebar nav {
+    flex-direction: row;
+    margin-top: 14px;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .sidebar nav a {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .sidebar nav svg {
+    width: 16px;
+    height: 16px;
+  }
+  .topbar {
+    height: 52px;
+    padding: 0 20px;
+  }
+  .workspace {
+    padding: 24px 16px;
+  }
+  .page-heading {
+    display: block;
+    margin-bottom: 22px;
+  }
+  .page-heading > .primary {
+    margin-top: 16px;
+  }
+  .metrics {
+    gap: 9px;
+    margin-bottom: 19px;
+  }
+  .metrics > div {
+    padding: 15px 10px;
+  }
+  .metrics span {
+    font-size: 14px;
+    line-height: 1.5;
+    display: block;
+  }
+  .metrics span svg {
+    display: none;
+  }
+  .metrics strong {
+    font-size: 24px;
+  }
+  .metrics small {
+    line-height: 1.4;
+    display: block;
+  }
+  .panel-heading {
+    padding: 20px 16px;
+    align-items: flex-start;
+  }
+  .panel-heading h2 {
+    font-size: 17px;
+  }
+  .panel-heading p.muted {
+    font-size: 14px;
+  }
+  .agenda-list {
+    padding: 0 16px;
+  }
+  .appointment {
+    gap: 12px;
+  }
+  .appointment-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .appointment-body {
+    padding-left: 12px;
+  }
+  .booking-panel form {
+    display: block;
+    padding: 20px 16px;
+  }
+  .slots {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .content-grid {
+    gap: 20px;
+  }
+  .quiet-note {
+    padding: 16px;
+    line-height: 1.5;
+  }
+  .service-strip {
+    margin-top: 23px;
+  }
+  h1 {
+    font-size: 27px;
+  }
+  .filter-control {
+    padding: 14px 16px;
+  }
+}
